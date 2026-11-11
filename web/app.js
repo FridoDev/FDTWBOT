@@ -1,4 +1,5 @@
 // FRIDO DEV BOT — created & designed by FRIDO (FRIDO DEV TECH).
+// Phone powered. Owner controlled.
 const $ = id => document.getElementById(id);
 const local = ['127.0.0.1', 'localhost'].includes(location.hostname) && !new URLSearchParams(location.search).has('guide');
 const activeStates = new Set(['starting', 'connecting', 'awaiting_link', 'connected', 'reconnecting']);
