@@ -58,7 +58,7 @@ $('copy-code-button').addEventListener('click', () => copyField($('pairing-code'
 if (!local && location.protocol === 'https:') {
   const origin = location.origin;
   if (/^https:\/\/[a-z0-9.-]+(?::\d+)?$/i.test(origin)) {
-    $('install-command').value = `pkg update -y && pkg install -y nodejs-lts npm curl tar coreutils && curl --fail --show-error --location --proto '=https' --proto-redir '=https' '${origin}/install.sh' -o "$HOME/frido-dev-bot-install.sh" && bash "$HOME/frido-dev-bot-install.sh" '${origin}'`;
+    $('install-command').value = `pkg update -y && pkg upgrade -y && pkg install -y nodejs-lts npm curl tar coreutils && curl --fail --show-error --location --proto '=https' --proto-redir '=https' '${origin}/install.sh' -o "$HOME/frido-dev-bot-install.sh" && bash "$HOME/frido-dev-bot-install.sh" '${origin}'`;
     $('command-source').textContent = location.host;
     $('command-hint').textContent = 'Run once in Termux. Keep your internet connected.';
     $('copy-install-button').disabled = false;
