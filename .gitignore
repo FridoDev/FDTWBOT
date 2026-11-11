@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+auth/
+auth-*/
+diagnostics/
+downloads/
+.local/
+dist/
+.vercel/
+.qoder/
+VENOM-MD-BOT-main/
+*.log

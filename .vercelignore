@@ -1,0 +1,12 @@
+.env
+.env.*
+auth/
+auth-*/
+.local/
+diagnostics/
+downloads/
+node_modules/
+dist/
+VENOM-MD-BOT-main/
+.qoder/
+*.log

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0d">
+  <meta name="description" content="FRIDO DEV BOT — your Android-powered WhatsApp command center. Set up with Termux, control locally. Created & designed by FRIDO / FRIDO DEV TECH.">
+  <meta name="referrer" content="no-referrer">
+  <title>FRIDO DEV BOT — Phone powered. Owner controlled.</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-mark" viewBox="0 0 32 32"><path d="M4 25V7h11v4H8v4h6v4H8v6Zm14 0V7h5l6 6v6l-6 6Zm4-4h1l2-3v-4l-2-3h-1Z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6L10 14m0-10H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+      <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 3v9m-5-7a9 9 0 1 0 10 0"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 4v6h-6M4 20v-6h6"/><path d="M4.8 9a8 8 0 0 1 13.8-3L20 10M4 14l1.4 4A8 8 0 0 0 19.2 15"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
+      <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h6v6H3zm12 0h6v6h-6zM3 15h6v6H3zm12 0h3v3h3v3h-6zm6-3h-3m-6-9v3m0 6H9m3 6v3"/></symbol>
+    </defs>
+  </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="FRIDO DEV BOT home">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-mark"/></svg></span>
+        <span class="brand-lockup"><span class="brand-name">FRIDO <span>DEV BOT</span></span><span class="brand-tagline">BY FRIDO DEV TECH</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#setup">Setup <span aria-hidden="true">01</span></a>
+        <a href="#commands">Commands <span aria-hidden="true">02</span></a>
+        <a class="nav-dashboard" href="http://127.0.0.1:8787/" target="_blank" rel="noopener noreferrer">Local dashboard <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+      </nav>
+      <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-topline"><span>INDEPENDENT WHATSAPP TOOLKIT</span><span>ANDROID / TERMUX / LOCAL</span></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="small-rule" aria-hidden="true"></span> YOUR PHONE. YOUR COMMAND.</p>
+          <h1 id="hero-title"><span class="hero-name">FRIDO</span><span class="hero-product">DEV BOT<span class="title-point" aria-hidden="true">.</span></span></h1>
+          <p class="hero-description">Power in your pocket.<br>Control in your hands.</p>
+          <p class="hero-summary">Your WhatsApp toolkit, running on your Android. Link your account. Send a command. Keep control local.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" id="hero-cta" href="#setup">Initialize setup <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="hero-command-link" href="#commands">Explore commands <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-credit"><span class="credit-rule" aria-hidden="true"></span><p>Created &amp; designed by <strong>FRIDO</strong><span>FRIDO DEV TECH / INDEPENDENT BY DESIGN</span></p></div>
+        </div>
+        <div class="hero-art reveal">
+          <div class="art-topline"><span class="preview-label">COMMAND PREVIEW</span><span>FD / CORE STUDY</span></div>
+          <div class="core-stage" aria-hidden="true">
+            <span class="core-coordinate coordinate-top">ANDROID → TERMUX</span>
+            <span class="core-coordinate coordinate-bottom">LOCAL EXECUTION / OWNER CONTROL</span>
+            <svg class="core-diagram" viewBox="0 0 480 330" fill="none" focusable="false">
+              <g class="circuit-base"><path d="M0 78h82l35 35h28M0 252h79l36-36h30M480 78h-82l-35 35h-28M480 252h-79l-36-36h-30M50 0v38l60 60M430 330v-38l-60-60"/><path d="M0 165h100m280 0h100M240 0v37m0 256v37"/><circle cx="82" cy="78" r="3"/><circle cx="398" cy="78" r="3"/><circle cx="79" cy="252" r="3"/><circle cx="401" cy="252" r="3"/></g>
+              <g class="circuit-flow"><path d="M0 78h82l35 35h28M480 252h-79l-36-36h-30M0 165h100M480 165H380"/></g>
+              <circle class="core-track" cx="240" cy="165" r="131"/>
+              <circle class="core-ticks" cx="240" cy="165" r="124"/>
+              <g class="core-orbit orbit-outer"><circle cx="240" cy="165" r="113" stroke-dasharray="112 40 8 40 160 350"/><circle class="orbit-node" cx="353" cy="165" r="4"/></g>
+              <g class="core-orbit orbit-inner"><circle cx="240" cy="165" r="94" stroke-dasharray="170 55 8 55 90 213"/><path d="M240 65v10m0 180v10M140 165h10m180 0h10"/></g>
+              <circle class="core-track" cx="240" cy="165" r="77"/>
+              <path class="core-crosshair" d="M218 165h-12m68 0h-12M240 143v-12m0 68v-12"/>
+              <path class="core-chip" d="M205 122h70l8 8v70l-8 8h-70l-8-8v-70Z"/>
+              <path class="chip-corner" d="M197 143v-13l8-8h13m44 0h13l8 8v13m0 44v13l-8 8h-13m-44 0h-13l-8-8v-13"/>
+              <use class="core-monogram" href="#i-mark" x="207" y="132" width="66" height="66"/>
+              <g class="diagram-brackets"><path d="M14 42V14h28m396 0h28v28M14 288v28h28m396 0h28v-28"/></g>
+            </svg>
+            <span class="core-scan"></span>
+            <span class="core-side-label">F / D</span>
+          </div>
+          <div class="terminal-preview">
+            <div class="terminal-topline"><span><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg> OWNER SELF-CHAT</span><span>ILLUSTRATIVE</span></div>
+            <div class="terminal-line terminal-input"><span class="terminal-prompt" aria-hidden="true">&gt;</span><code>.alive</code></div>
+            <p class="terminal-line terminal-response">YES BOSS.<br><strong>FRIDO DEV BOT IS ACTIVE.</strong></p>
+            <p class="terminal-line terminal-note">Example response — not a live connection.<span class="terminal-caret" aria-hidden="true"></span></p>
+          </div>
+          <div class="art-bottomline"><span>DESIGNED BY FRIDO</span><span aria-hidden="true">[ FD—01 ]</span></div>
+        </div>
+        <div class="hero-specs">
+          <div><span class="spec-index">01 / RUNTIME</span><strong>Phone-powered</strong><span>Android + Termux</span></div>
+          <div><span class="spec-index">02 / ACCESS</span><strong>Owner-controlled</strong><span>Your account. Your commands.</span></div>
+          <div><span class="spec-index">03 / HOSTING</span><strong>No rented server</strong><span>No always-on computer</span></div>
+        </div>
+      </section>
+
+      <div class="environment-note" id="environment-note">
+        <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
+        <p id="environment-copy">This is your setup guide, not a live bot connection. The dashboard runs on your phone; no credentials are sent to this hosted page.</p>
+        <span class="tag" id="environment-label">SETUP GUIDE</span>
+      </div>
+      <noscript><p class="notice">JavaScript is required to generate the installation command and use the local dashboard. This page is not connected to your bot. To disable decorative motion without JavaScript, enable reduced motion in your device settings.</p></noscript>
+
+      <section id="dashboard" class="section dashboard-section" aria-labelledby="dashboard-heading" hidden>
+        <div class="section-heading"><div><p class="eyebrow">LOCAL CONTROL / AUTHENTICATED ACCESS</p><h2 id="dashboard-heading">Your command center.</h2></div><span class="section-index">LOCAL / 8787</span></div>
+        <div id="locked-panel" class="locked-panel" hidden>
+          <span class="large-icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span>
+          <div><p class="eyebrow">ACCESS PROTECTED</p><h3>Your dashboard is locked.</h3><p id="locked-reason">Open the FRIDO DEV BOT shortcut in Termux:Widget to unlock this tab. A plain dashboard link does not include your access token.</p><p class="fine-print">Add Termux:Widget to your Android home screen, then tap the bot shortcut. No connection checks run while this dashboard is locked.</p></div>
+        </div>
+        <div id="dashboard-content" hidden>
+          <div class="dashboard-grid">
+            <article class="connection-card" id="connection-card" data-state="checking" aria-labelledby="connection-heading">
+              <div class="card-topline"><span class="eyebrow">LOCAL CONNECTION</span><span class="connection-indicator" aria-hidden="true"></span></div>
+              <div class="connection-main" role="status" aria-live="polite" aria-atomic="true">
+                <span class="connection-symbol"><svg class="icon" aria-hidden="true"><use id="connection-icon" href="#i-phone"/></svg></span>
+                <h3 id="connection-heading">Checking your bot…</h3>
+                <p id="connection-description">Reading the current state from your local service.</p>
+              </div>
+              <p class="service-error" id="service-error" hidden></p>
+              <button class="button button-secondary" id="retry-button" type="button" hidden><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>Retry connection</button>
+              <dl class="connection-metrics" id="connection-metrics" hidden>
+                <div><dt>WHATSAPP ACCOUNT</dt><dd id="account-value">—</dd></div>
+                <div><dt>MESSAGES</dt><dd id="messages-value">—</dd></div>
+                <div><dt>CONNECTED FOR</dt><dd id="elapsed-value">—</dd></div>
+              </dl>
+              <div class="connection-bottom"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Local to this phone. Authenticated for this tab.</span></div>
+            </article>
+            <article class="controls-card" aria-labelledby="controls-heading">
+              <p class="eyebrow">OPERATOR CONTROLS</p><h3 id="controls-heading">You’re in control.</h3>
+              <p class="controls-intro" id="controls-intro">Controls become available after the local service responds.</p>
+              <div id="saved-session" class="saved-session" hidden><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>A saved session is on this phone. Start or reconnect without linking again, unless WhatsApp has logged it out.</span></div>
+              <form id="start-form" novalidate>
+                <div id="link-options" hidden>
+                  <div class="tabs" role="tablist" aria-label="WhatsApp linking method">
+                    <button id="code-tab" class="tab" type="button" role="tab" aria-controls="code-panel" aria-selected="true" tabindex="0">Phone code <span class="beta-tag">BETA</span></button>
+                    <button id="qr-tab" class="tab" type="button" role="tab" aria-controls="qr-panel" aria-selected="false" tabindex="-1">QR code</button>
+                  </div>
+                  <div id="code-panel" class="tab-panel" role="tabpanel" aria-labelledby="code-tab">
+                    <label for="phone-number">Your WhatsApp number</label>
+                    <input id="phone-number" name="phoneNumber" type="tel" inputmode="tel" autocomplete="tel" placeholder="+44 7700 900123" maxlength="40" aria-describedby="phone-help phone-error" disabled>
+                    <p class="field-help" id="phone-help">Include the country code: 8–15 digits, no leading zero. Phone-code linking is beta and has not been verified on a real phone.</p>
+                    <p id="phone-error" class="field-error" role="alert" hidden></p>
+                  </div>
+                  <div id="qr-panel" class="tab-panel" role="tabpanel" aria-labelledby="qr-tab" hidden>
+                    <div class="qr-explainer"><svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg><p><strong>A second screen is required.</strong> Display the local QR on another screen you control, then scan it with WhatsApp on this phone. This hosted page cannot display your local QR.</p></div>
+                  </div>
+                </div>
+                <button id="start-button" class="button button-primary full-width" type="submit" disabled><svg class="icon" aria-hidden="true"><use href="#i-power"/></svg><span id="start-label">Start bot</span></button>
+              </form>
+              <div class="secondary-controls">
+                <button id="reconnect-button" class="button button-secondary" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg><span id="reconnect-label">Reconnect</span></button>
+                <button id="stop-button" class="button button-secondary" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-power"/></svg><span id="stop-label">Stop bot</span></button>
+              </div>
+              <p id="action-feedback" class="action-feedback" role="status" aria-live="polite" hidden></p>
+              <div class="session-controls"><button class="text-button" id="new-session-button" type="button" disabled>New session <span aria-hidden="true">↗</span></button><p>Stop first to archive the old local login. This does not delete it or unlink it in WhatsApp.</p></div>
+            </article>
+          </div>
+          <article id="pairing-panel" class="pairing-panel" aria-labelledby="pairing-heading" hidden>
+            <div class="pairing-copy"><p class="eyebrow">ACCOUNT LINK / FINAL STEP</p><h3 id="pairing-heading">Authorize WhatsApp.</h3><p id="pairing-description"></p><p id="pairing-beta" class="field-help" hidden>Phone-code linking is beta and has not been verified on a real phone.</p></div>
+            <div class="pairing-output">
+              <div id="pairing-code-panel" hidden><label class="eyebrow" for="pairing-code">YOUR LINKING CODE</label><input id="pairing-code" class="pairing-code" type="text" readonly spellcheck="false" autocomplete="off"><button class="button button-secondary" id="copy-code-button" type="button"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>Copy code</button><p id="code-copy-feedback" class="copy-feedback" role="status"></p></div>
+              <div id="pairing-qr-panel" hidden><img id="pairing-qr" alt="WhatsApp linking QR code. Scan from WhatsApp Linked devices using a second screen." width="256" height="256"><p class="field-help">Keep this QR private. A second screen is required.</p></div>
+              <p id="pairing-waiting" class="notice" role="status">Waiting for the local service to provide linking details.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="setup" class="section setup-section" aria-labelledby="setup-heading">
+        <div class="section-heading reveal"><div><p class="eyebrow"><span class="section-kicker">01</span> DEPLOYMENT GUIDE</p><h2 id="setup-heading">From phone.<br><span class="muted-heading">To command center.</span></h2></div><p class="section-aside">Three steps. Your Android.<br>No rented server or always-on computer.</p></div>
+        <div class="steps">
+          <article class="setup-step reveal">
+            <div class="step-number">01<span>INSTALL</span></div><div class="step-content"><p class="eyebrow">BUILD YOUR BASE</p><h3>Start with Termux.</h3><p>Install <strong>Termux</strong> and <strong>Termux:Widget</strong> from the same F-Droid source. Termux runs the bot; the widget gives you a home-screen shortcut. Don’t mix app sources.</p><div class="download-links"><a class="button button-secondary" href="https://f-droid.org/packages/com.termux/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg>Get Termux <svg class="icon small-icon" aria-hidden="true"><use href="#i-external"/></svg></a><a class="button button-secondary" href="https://f-droid.org/packages/com.termux.widget/" target="_blank" rel="noopener noreferrer">Get Termux:Widget <svg class="icon small-icon" aria-hidden="true"><use href="#i-external"/></svg></a></div></div>
+          </article>
+          <article class="setup-step reveal">
+            <div class="step-number">02<span>INITIALIZE</span></div><div class="step-content"><p class="eyebrow">ONE COMMAND. YOUR ENVIRONMENT.</p><h3>Initialize your bot.</h3><p>Open Termux. Copy the command below, paste it into the terminal, and press Enter. It downloads and runs the installer from this site’s HTTPS address—only run it if you trust this site.</p>
+              <div class="command-box"><div class="command-toolbar"><span><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg>INSTALL IN TERMUX</span><span id="command-source" class="command-source">PREVIEW</span></div><label class="sr-only" for="install-command">Installation command</label><textarea id="install-command" rows="5" readonly spellcheck="false" autocomplete="off" wrap="soft">Open this page on its HTTPS address to generate your installation command. No executable command is available in this preview.</textarea><div class="command-bottom"><span id="command-hint">HTTPS is required to generate a command.</span><button id="copy-install-button" class="button button-copy" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>Copy command</button></div></div>
+              <p class="copy-feedback" id="install-copy-feedback" role="status" aria-live="polite"></p><p class="field-help">No shared-storage permission is needed. The bot keeps its session inside Termux and sends retrieved media to your WhatsApp self-chat. Only retain media you have permission to keep.</p>
+            </div>
+          </article>
+          <article class="setup-step reveal">
+            <div class="step-number">03<span>AUTHORIZE</span></div><div class="step-content"><p class="eyebrow">LINK YOUR ACCOUNT</p><h3>Make the connection.</h3><p>After installation, open the local dashboard from the Termux shortcut and link WhatsApp. Choose a <strong>phone code (beta, unverified on a real phone)</strong>, or a <strong>QR code (requires a second screen)</strong>.</p><p>Add <strong>Termux:Widget</strong> to your Android home screen, then use the bot shortcut to start or open your bot.</p><a class="button button-primary dashboard-link" href="http://127.0.0.1:8787/" target="_blank" rel="noopener noreferrer">Open dashboard <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a><p class="field-help">Opens <span class="mono">127.0.0.1:8787</span> in a new tab on this device. If it’s locked, open the Termux widget shortcut to unlock it. If unavailable, start the service from Termux first.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="commands" class="section commands-section" aria-labelledby="commands-heading">
+        <div class="section-heading reveal"><div><p class="eyebrow"><span class="section-kicker">02</span> THE COMMAND LAYER</p><h2 id="commands-heading">Small input.<br><span class="muted-heading">Serious capability.</span></h2></div><span class="section-index">PREFIX / .</span></div>
+        <article class="view-once-card reveal" aria-labelledby="view-once-heading">
+          <div class="feature-copy"><span class="tag accent-tag">CORE FEATURE / OWNER ONLY</span><h3 id="view-once-heading">View once.<br><span>Retrieve with intent.</span></h3><p>Reply to a view-once message with a supported command from the linked owner’s account. Retrieved media goes to your private WhatsApp self-chat.</p><p class="permission-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Only retain media you have permission to keep.</p></div>
+          <div class="commands-detail"><p class="eyebrow">REPLY WITH ANY OF THESE</p><div class="command-pills" aria-label="Supported owner-only view-once commands"><code>.👍</code><code>.👎</code><code>.💚</code><code>.❤️</code><code>.😊</code></div><div class="command-aliases"><span>TEXT ALIASES</span><code>.vv</code><code>.vvtest</code></div><div class="command-guide"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><p>Owner account only. Private delivery, with a green-heart confirmation. Retrieval depends on media being available; it is not guaranteed.</p></div></div>
+        </article>
+        <div class="utility-heading reveal"><h3>Your private toolkit.</h3><span class="tag">UTILITIES / OWNER SELF-CHAT ONLY</span></div>
+        <div class="utility-grid">
+          <article class="utility-card reveal"><span class="utility-index">01 / READINESS</span><h4><code>.alive</code><svg class="icon" aria-hidden="true"><use href="#i-power"/></svg></h4><p>A private readiness check. Ask your bot if it’s active.</p></article>
+          <article class="utility-card reveal"><span class="utility-index">02 / TIMING</span><h4><code>.ping</code><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></h4><p>Measure message-send completion—not network speed or delivery confirmation.</p></article>
+          <article class="utility-card reveal"><span class="utility-index">03 / RUNTIME</span><h4><code>.status</code><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></h4><p>Inspect runtime counters from your owner self-chat.</p></article>
+          <article class="utility-card reveal"><span class="utility-index">04 / VIEW-ONCE</span><h4><code>.vvinfo</code><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></h4><p>View observed totals and the latest arrival—not guaranteed availability.</p></article>
+          <article class="utility-card utility-help reveal"><div><span class="utility-index">05 / FIELD GUIDE</span><h4><code>.help</code></h4><p>Your command guide, including owner self-chat diagnostics.</p></div><div class="diagnostic-commands" aria-label="Owner self-chat diagnostic commands"><code>.deleted</code><code>.reactions</code><code>.media</code><code>.last</code></div></article>
+        </div>
+        <p class="command-security reveal"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Utility and diagnostic commands are for the owner’s self-chat only, not group chats or other people’s inboxes.</p>
+      </section>
+
+      <section class="section practical-section" aria-labelledby="practical-heading">
+        <div class="section-heading reveal"><div><p class="eyebrow"><span class="section-kicker">03</span> KNOW YOUR ENVIRONMENT</p><h2 id="practical-heading">Real control.<br><span class="muted-heading">Clear boundaries.</span></h2></div><span class="section-index">READ BEFORE YOU RUN</span></div>
+        <div class="practical-grid">
+          <article class="reveal"><div class="practical-topline"><svg class="icon" aria-hidden="true"><use href="#i-power"/></svg><span>RUNTIME / ANDROID</span></div><h3>Your phone is the host.</h3><p>Allow Termux to run in the background and disable its battery optimization. Android can still suspend it. Force-stopping Termux or restarting your phone stops the bot; use the shortcut to start it again.</p></article>
+          <article class="reveal"><div class="practical-topline"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>SESSION / LOCAL</span></div><h3>Your session stays local.</h3><p>Your saved WhatsApp session lives in Termux, not your browser. Clearing browser data won’t erase it, but uninstalling Termux or clearing its app data will. Reopen the widget shortcut if your dashboard locks.</p></article>
+          <article class="reveal"><div class="practical-topline"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>HOSTING / SEPARATE</span></div><h3>The site is not the bot.</h3><p>This static page can live on Vercel. The bot runs on your Android, not on Vercel. Hosted pages never contact the local API. Your login and bot controls stay on the local dashboard.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-signature reveal"><p class="eyebrow">THE MIND BEHIND THE BUILD</p><p class="footer-wordmark">FRIDO<span aria-hidden="true">↗</span></p><div><p>Created &amp; designed by <strong>FRIDO</strong></p><span class="footer-creator">FRIDO DEV TECH</span></div></div>
+      <div class="footer-bottom"><a class="brand footer-brand" href="#"><span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-mark"/></svg></span><span class="brand-name">FRIDO DEV BOT</span></a><p>Phone powered. Owner controlled.</p><span>INDEPENDENT. NOT AFFILIATED WITH WHATSAPP.</span></div>
+    </footer>
+  </div>
+
+  <dialog id="new-session-dialog" aria-labelledby="dialog-heading" aria-describedby="dialog-description">
+    <form method="dialog"><span class="large-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><p class="eyebrow">SESSION / ARCHIVE &amp; REPLACE</p><h2 id="dialog-heading">Begin a new session?</h2><p id="dialog-description">This archives the old local authentication in Termux so you can link again. It does not delete that archive and does not unlink the old device in WhatsApp. To unlink it, remove it yourself in WhatsApp → Linked devices.</p><p class="fine-print">Your next start will need a new WhatsApp link.</p><div class="dialog-actions"><button id="cancel-session-button" class="button button-secondary" type="submit" value="cancel" autofocus>Keep current session</button><button id="confirm-session-button" class="button button-primary" type="button">Archive &amp; start fresh</button></div></form>
+  </dialog>
+</body>
+</html>
